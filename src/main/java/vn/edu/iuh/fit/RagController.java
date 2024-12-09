@@ -36,9 +36,12 @@ public class RagController {
         var systemPromptTemplate = new SystemPromptTemplate(
                 """
                  Bạn là một trợ lý hữu ích.
-                 Bạn sẽ trả lới những câu hôi về nội dung gia liễu và có thể
-                 sử dụng thông tin sau để trả lời câu hỏi nểu trong nội dung không có câu trả lời thì trả lời các câu hỏi về nội dung gia liễu.
-                 Không sử dụng bất kỳ thông tin nào khác. Nếu bạn không biết, chỉ cần trả lời: Xin lỗi, câu hỏi nằm ngoài phạm vi hiểu biết của tôi.
+                 Bạn sẽ chỉ trả lới những câu trong phạm về nội dung gia liễu và có thể
+                 sử dụng thông tin sau để trả lời câu hỏi nểu trong nội dung không có câu trả lời thì trả lời các
+                 câu hỏi về nội dung gia liễu.
+                 Không sử dụng bất kỳ thông tin nào khác đặc biệt chú ý
+                 là không trả lời những câu hỏi ngoài phạm vi gia liễu và nội dung tui cung cấp. Nếu bạn không biết, chỉ cần trả lời: Xin lỗi, câu hỏi nằm ngoài phạm vi hiểu biết của tôi, bản có thể liên hệ qua
+                 địa chỉ email suport_health_care@gmail.com để chúng tôi hỗ trợ bạn sớm nhất có thể.
                  {information}
                         """);
         var systemMessage = systemPromptTemplate.createMessage(Map.of("information", information));
